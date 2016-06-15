@@ -1,0 +1,567 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	    James Perrone - Portfolio
+Version:	    0.2
+Created:        01/04/2016
+Last change:	15/06/2016 [ Changelog: v0.2 - SCSS Clean Up and Desktop Changes, v0.1 - SCSS Clean Up ]
+
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Color Codes]
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Basic Styles]
+-------------------------------------------------------------------*/
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  background-color: #FFFFFF;
+  color: #222222;
+  font-family: 'Industry', 'Brandon Grotesque', 'Futura-PT', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  height: 100%;
+  line-height: 1.6;
+}
+
+body.fixed {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+/*------------------------------------------------------------------
+[Utility]
+-------------------------------------------------------------------*/
+.center {
+  margin: 0 auto;
+}
+
+.flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*------------------------------------------------------------------
+[Typography]
+
+Body copy:		    1em/16px        'Futura-PT', Helvetica, Arial, sans-serif;
+Headers:		    1.5em/24px      'Futura-PT', Helvetica, Arial, sans-serif;
+Input, textarea:	1em/16px        'Futura-PT', Helvetica, Arial, sans-serif;
+Lead                1.25em/20px     'Futura-PT', Helvetica, Arial, sans-serif;
+Titel:              2em/32px        'Futura-PT', Helvetica, Arial, sans-serif;
+
+-------------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222222;
+  font-family: 'Industry', 'Brandon Grotesque', 'Futura-PT', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+}
+
+article p {
+  line-height: 2;
+}
+
+a {
+  color: #58C9B9;
+  outline: 0;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+a:focus, a:hover {
+  text-decoration: underline;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}
+
+hr {
+  background-color: #58C9B9;
+  border: none;
+  display: block;
+  height: 2px;
+  margin: 0 auto 1em;
+  width: 5em;
+}
+
+.lead,
+.titel {
+  text-align: center;
+  font-weight: 700;
+}
+
+.lead {
+  font-size: 1.25em;
+  margin-top: 1em;
+}
+
+.titel {
+  color: #EEEEEE;
+  font-weight: 700;
+  line-height: 1.35em;
+  margin: 1.5em 0;
+}
+
+@media (min-width: 700px) {
+  .titel {
+    margin: 2em 0;
+    font-size: 3em;
+  }
+}
+
+.heading {
+  margin: 1.5em 0 0;
+  text-align: center;
+}
+
+/*------------------------------------------------------------------
+[Buttons]
+-------------------------------------------------------------------*/
+.button {
+  border: 2px solid #222222;
+  color: #222222;
+  display: block;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 3em auto;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
+  width: 225px;
+}
+
+.button:focus, .button:hover {
+  background: #222222;
+  color: #EEEEEE;
+  text-decoration: none;
+}
+
+/*------------------------------------------------------------------
+[Layout]
+-------------------------------------------------------------------*/
+.site_wrapper {
+  margin: 25px;
+}
+
+.content_wrapper {
+  max-width: 960px;
+}
+
+.bottom_bar,
+.top_bar {
+  background: #FFFFFF;
+  height: 25px;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  z-index: 100000;
+}
+
+.bottom_bar {
+  bottom: 0;
+}
+
+.top_bar {
+  top: 0;
+}
+
+section {
+  border-bottom: 1px solid #BBBBBB;
+}
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+	2. Header / #main_header
+		2.1. Navigation / #main_navigation
+	3. Content /
+		3.1. About Section / #about_section
+        3.2. Portfolio Section / #portfolio_section
+	4. Footer /
+    5. Work Pagina / 
+
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[2. Header]
+-------------------------------------------------------------------*/
+#main_header {
+  background-color: #222222;
+  padding: 25px;
+}
+
+#main_header .titel span {
+  color: #BBBBBB;
+  text-decoration: line-through;
+}
+
+#main_header .titel .typewrite:focus, #main_header .titel .typewrite:hover {
+  text-decoration: none;
+}
+
+#main_header .titel .typewrite span {
+  background-color: #58C9B9;
+  color: #FFFFFF;
+  padding-left: 3px;
+  text-decoration: none;
+}
+
+#main_header .lead {
+  color: #BBBBBB;
+}
+
+#main_header .logo {
+  left: 50%;
+  margin-left: -20px;
+  position: absolute;
+  top: 25px;
+  width: 40px;
+}
+
+#main_header .logo img {
+  width: 100%;
+}
+
+/*------------------------------------------------------------------
+[2.1 Navigation]
+-------------------------------------------------------------------*/
+#main_navigation {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#main_navigation .menu {
+  cursor: pointer;
+  color: #EEEEEE;
+  font-size: 1.25em;
+}
+
+#main_navigation .menu:focus, #main_navigation .menu:hover {
+  color: #58C9B9;
+}
+
+#main_navigation .social_icon {
+  color: #EEEEEE;
+  margin-left: 0.75em;
+  font-size: 1.25em;
+}
+
+#main_navigation .social_icon:focus, #main_navigation .social_icon:hover {
+  color: #58C9B9;
+}
+
+#main_navigation .overlay {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #222222;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 25px;
+  opacity: 0;
+  position: fixed;
+  right: 25px;
+  top: 25px;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  z-index: 1;
+}
+
+#main_navigation .overlay .overlay_content {
+  margin-top: -50px;
+  text-align: center;
+}
+
+#main_navigation .overlay .overlay_content a {
+  color: #EEEEEE;
+  display: block;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+#main_navigation .overlay .overlay_content a:focus, #main_navigation .overlay .overlay_content a:hover {
+  color: #58C9B9;
+  text-decoration: none;
+}
+
+#main_navigation .overlay .close {
+  color: #EEEEEE;
+  cursor: pointer;
+  left: 25px;
+  position: absolute;
+  font-size: 1.25em;
+  top: 25px;
+}
+
+#main_navigation .overlay .close:focus, #main_navigation .overlay .close:hover {
+  color: #58C9B9;
+}
+
+#main_navigation .overlay--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll_top {
+  color: #222222;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: .20em .70em;
+  font-size: 2em;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+/*------------------------------------------------------------------
+[3.1. About Section]
+-------------------------------------------------------------------*/
+.profile_picture {
+  border-radius: 50%;
+  display: block;
+  height: 150px;
+  margin: 0 auto 15px;
+  width: 150px;
+}
+
+/*------------------------------------------------------------------
+[3.2. Portfolio Section]
+-------------------------------------------------------------------*/
+.flip {
+  height: 270px;
+  margin: 25px auto;
+  -webkit-perspective: 800;
+          perspective: 800;
+  position: relative;
+  width: 100%;
+}
+
+.flip .card {
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  transition: 0.75s;
+  width: 100%;
+}
+
+.flip .card .face {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.flip .card .face p {
+  line-height: 270px;
+}
+
+.flip .card .front {
+  background: #222222;
+  color: #FFFFFF;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+}
+
+.flip .card .back {
+  background: #222222;
+  color: #FFFFFF;
+  cursor: pointer;
+  -webkit-transform: rotatex(-180deg);
+      -ms-transform: rotatex(-180deg);
+          transform: rotatex(-180deg);
+}
+
+.flip .card.flipped {
+  -webkit-transform: rotatex(-180deg);
+      -ms-transform: rotatex(-180deg);
+          transform: rotatex(-180deg);
+}
+
+@media (min-width: 700px) {
+  .flip {
+    float: left;
+    margin: 0;
+    width: 50%;
+  }
+}
+
+.flip .card .work_1,
+.flip .card .work_2,
+.flip .card .work_3,
+.flip .card .work_4,
+.flip .card .work_5,
+.flip .card .work_6 {
+  background-size: cover;
+  background-position: center center;
+}
+
+.flip .card .work_1 {
+  background-image: url("../images/ufo.jpg");
+}
+
+.flip .card .work_2 {
+  background-image: url("../images/identification_screen_a.png");
+}
+
+.flip .card .work_3 {
+  background-image: url("../images/05-03-2016.png");
+}
+
+.flip .card .work_4 {
+  background-image: url("../images/the_red_woman_.gif");
+}
+
+.flip .card .work_5 {
+  background-image: url("../images/dribbbowwww.png");
+}
+
+.flip .card .work_6 {
+  background-image: url("../images/cuboir.jpg");
+}
+
+/*------------------------------------------------------------------
+[4. Footer]
+-------------------------------------------------------------------*/
+#footer_section {
+  background-color: #222222;
+  margin-top: -25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 0;
+  padding: 50px 0 75px;
+}
+
+@media (min-width: 700px) {
+  #footer_section {
+    margin-top: 25px;
+  }
+}
+
+#footer_section .button {
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+#footer_section .button:focus, #footer_section .button:hover {
+  background: #FFFFFF;
+  color: #222222;
+}
+
+/*------------------------------------------------------------------
+[5. Work Pagina]
+-------------------------------------------------------------------*/
+.header_work_1,
+.header_work_2,
+.header_work_3,
+.header_work_4,
+.header_work_5,
+.header_work_6 {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50vh;
+}
+
+.header_work_1 {
+  background-color: #181743 !important;
+  background-image: url("../images/ufo.jpg");
+}
+
+.work_gallery {
+  padding: 0 0 25px 0;
+  margin-top: 25px;
+}
+
+.work_gallery img {
+  border: 0.5em solid #FFFFFF;
+  display: block;
+  float: left;
+  width: 33.333%;
+}
+
+#gallery_overlay {
+  background: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  display: none;
+  height: 100%;
+  left: 25px;
+  position: fixed;
+  right: 25px;
+  text-align: center;
+  top: 25px;
+  z-index: 1;
+}
+
+#gallery_overlay img {
+  bottom: 50px;
+  left: 0;
+  margin: auto;
+  max-height: calc(100% - 100px);
+  max-width: calc(100% - 50px);
+  position: absolute;
+  right: 0;
+  top: 0;
+}

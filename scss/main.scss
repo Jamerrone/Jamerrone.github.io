@@ -1,0 +1,561 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	    James Perrone - Portfolio
+Version:	    0.2
+Created:        01/04/2016
+Last change:	15/06/2016 [ Changelog: v0.2 - SCSS Clean Up and Desktop Changes, v0.1 - SCSS Clean Up ]
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Color Codes]
+-------------------------------------------------------------------*/
+$da_grey: #222222;
+$md_grey: #BBBBBB;
+$li_grey: #EEEEEE;
+$white:   #FFFFFF;
+$hl_blue: #58C9B9;
+
+/*------------------------------------------------------------------
+[Basic Styles]
+-------------------------------------------------------------------*/
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: 100%;
+    background-color: $white;
+    color: $da_grey;
+    font-family: 'Industry', 'Brandon Grotesque', 'Futura-PT', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    height: 100%;
+    line-height: 1.6;
+}
+
+body.fixed {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+ul {
+    margin: 0;
+}
+
+/*------------------------------------------------------------------
+[Utility]
+-------------------------------------------------------------------*/
+.center {
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+/*------------------------------------------------------------------
+[Typography]
+
+Body copy:		    1em/16px        'Futura-PT', Helvetica, Arial, sans-serif;
+Headers:		    1.5em/24px      'Futura-PT', Helvetica, Arial, sans-serif;
+Input, textarea:	1em/16px        'Futura-PT', Helvetica, Arial, sans-serif;
+Lead                1.25em/20px     'Futura-PT', Helvetica, Arial, sans-serif;
+Titel:              2em/32px        'Futura-PT', Helvetica, Arial, sans-serif;
+
+-------------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $da_grey;
+    font-family: 'Industry', 'Brandon Grotesque', 'Futura-PT', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+    font-weight: 700;
+}
+
+p {
+    margin: 0 0 20px;
+    font-size: 1.2rem;
+}
+
+article p {
+    line-height: 2;
+}
+
+a {
+    color: $hl_blue;
+    outline: 0;
+    text-decoration: none;
+    transition: all 0.2s linear;
+
+    &:focus,
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 700;
+}
+
+hr {
+    background-color: $hl_blue;
+    border: none;
+    display: block;
+    height: 2px;
+    margin: 0 auto 1em;
+    width: 5em;
+}
+
+.lead,
+.titel {
+    text-align: center;
+    font-weight: 700;
+}
+
+.lead {
+    font-size: 1.25em;
+    margin-top: 1em;
+}
+
+.titel {
+    color: $li_grey;
+    font-weight: 700;
+    line-height: 1.35em;
+    margin: 1.5em 0;
+
+    @media(min-width: 700px) {
+        margin: 2em 0;
+        font-size: 3em;
+    }
+}
+
+.heading {
+    margin: 1.5em 0 0;
+    text-align: center;
+}
+
+/*------------------------------------------------------------------
+[Buttons]
+-------------------------------------------------------------------*/
+.button {
+    border: 2px solid $da_grey;
+    color: $da_grey;
+    display: block;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 3em auto;
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+    width: 225px;
+
+    &:focus,
+    &:hover {
+        background: $da_grey;
+        color: $li_grey;
+        text-decoration: none;
+    }
+}
+
+/*------------------------------------------------------------------
+[Layout]
+-------------------------------------------------------------------*/
+.site_wrapper {
+    margin: 25px;
+}
+
+.content_wrapper {
+    max-width: 960px;
+}
+
+.bottom_bar,
+.top_bar {
+    background: $white;
+    height: 25px;
+    position: fixed;
+    right: 0;
+    width: 100%;
+    z-index: 100000;
+}
+
+.bottom_bar {
+    bottom: 0;
+}
+
+.top_bar {
+    top: 0;
+}
+
+section {
+    border-bottom: 1px solid $md_grey;
+}
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+	2. Header / #main_header
+		2.1. Navigation / #main_navigation
+	3. Content /
+		3.1. About Section / #about_section
+        3.2. Portfolio Section / #portfolio_section
+	4. Footer /
+    5. Work Pagina / 
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[2. Header]
+-------------------------------------------------------------------*/
+#main_header {
+    background-color: $da_grey;
+    padding: 25px;
+
+    .titel {
+        span {
+            color: $md_grey;
+            text-decoration: line-through;
+        }
+
+        .typewrite {
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
+
+            span {
+                background-color: $hl_blue;
+                color: $white;
+                padding-left: 3px;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .lead {
+        color: $md_grey;
+    }
+
+    .logo {
+        left: 50%;
+        margin-left: -20px;
+        position: absolute;
+        top: 25px;
+        width: 40px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/*------------------------------------------------------------------
+[2.1 Navigation]
+-------------------------------------------------------------------*/
+#main_navigation {
+    display: flex;
+    justify-content: space-between;
+
+    .menu {
+        cursor: pointer;
+        color: $li_grey;
+        font-size: 1.25em;
+
+        &:focus,
+        &:hover {
+            color: $hl_blue;
+        }
+    }
+
+    .social_icon {
+        color: $li_grey;
+        margin-left: 0.75em;
+        font-size: 1.25em;
+
+        &:focus,
+        &:hover {
+            color: $hl_blue;
+        }
+    }
+
+    .overlay {
+        align-items: center;
+        background: $da_grey;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        left: 25px;
+        opacity: 0;
+        position: fixed;
+        right: 25px;
+        top: 25px;
+        transition: all 0.5s ease-in-out;
+        visibility: hidden;
+        z-index: 1;
+
+        .overlay_content {
+            margin-top: -50px;
+            text-align: center;
+
+            a {
+                color: $li_grey;
+                display: block;
+                font-weight: 700;
+                letter-spacing: 2px;
+                padding: 1em;
+                text-transform: uppercase;
+
+                &:focus,
+                &:hover {
+                    color: $hl_blue;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .close {
+            color: $li_grey;
+            cursor: pointer;
+            left: 25px;
+            position: absolute;
+            font-size: 1.25em;
+            top: 25px;
+
+            &:focus,
+            &:hover {
+                color: $hl_blue;
+            }
+        }
+
+        &--open {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+
+.scroll_top {
+    color: $da_grey;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: .20em .70em;
+    font-size: 2em;
+    background-color: $white;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+/*------------------------------------------------------------------
+[3.1. About Section]
+-------------------------------------------------------------------*/
+.profile_picture {
+    border-radius: 50%;
+    display: block;
+    height: 150px;
+    margin: 0 auto 15px;
+    width: 150px;
+}
+
+/*------------------------------------------------------------------
+[3.2. Portfolio Section]
+-------------------------------------------------------------------*/
+
+.flip {
+    height: 270px;
+    margin: 25px auto;
+    perspective: 800;
+    position: relative;
+    width: 100%;
+    
+    .card {
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: 0.75s;
+        width: 100%;
+        
+        .face {
+            backface-visibility: hidden;
+            height: 100%;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            z-index: 2;
+            
+            p {
+                line-height: 270px;
+            }
+        }
+        
+        .front {
+            background: $da_grey;
+            color: $white;
+            cursor: pointer;
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .back {
+            background: $da_grey;
+            color: $white;
+            cursor: pointer;
+            transform: rotatex(-180deg);
+        }
+        
+        &.flipped {
+            transform: rotatex(-180deg);
+        }
+    }
+    
+    @media(min-width: 700px) {
+        float: left;
+        margin: 0;
+        width: 50%;
+    }
+}
+
+.flip .card .work_1,
+.flip .card .work_2,
+.flip .card .work_3,
+.flip .card .work_4,
+.flip .card .work_5,
+.flip .card .work_6 {
+    background-size: cover; 
+    background-position: center center;
+}
+
+.flip .card .work_1 {
+    background-image: url("../images/ufo.jpg");
+}
+
+.flip .card .work_2 {
+    background-image: url("../images/identification_screen_a.png");
+}
+
+.flip .card .work_3 {
+    background-image: url("../images/05-03-2016.png");
+}
+
+.flip .card .work_4 {
+    background-image: url("../images/the_red_woman_.gif");
+}
+
+.flip .card .work_5 {
+    background-image: url("../images/dribbbowwww.png");
+}
+
+.flip .card .work_6 {
+    background-image: url("../images/cuboir.jpg");
+}
+
+/*------------------------------------------------------------------
+[4. Footer]
+-------------------------------------------------------------------*/
+#footer_section {
+    background-color: $da_grey;
+    margin-top: -25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 0;
+    padding: 50px 0 75px;;
+    
+    @media(min-width: 700px){
+        margin-top: 25px;
+    }
+}
+
+#footer_section .button {
+    border: 2px solid $white;
+    color: $white;
+
+    &:focus,
+    &:hover {
+        background: $white;
+        color: $da_grey;
+    }
+}
+
+/*------------------------------------------------------------------
+[5. Work Pagina]
+-------------------------------------------------------------------*/
+
+.header_work_1,
+.header_work_2,
+.header_work_3,
+.header_work_4,
+.header_work_5,
+.header_work_6, {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    height: 50vh;
+}
+
+.header_work_1 {
+    background-color: #181743 !important;
+    background-image: url("../images/ufo.jpg")
+}
+
+.work_gallery {
+    padding: 0 0 25px 0;
+    margin-top: 25px;
+    img {
+        border: 0.5em solid $white;
+        display: block;
+        float: left;
+        width: 33.333%;
+    }
+}
+
+#gallery_overlay {
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+    display:none;
+    height:100%;
+    left: 25px;
+    position:fixed;
+    right: 25px;
+    text-align:center;
+    top:25px;
+    z-index: 1;
+    
+    img {
+        bottom: 50px;
+        left: 0;
+        margin: auto;
+        max-height: calc(100% - 100px);
+        max-width: calc(100% - 50px);
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
