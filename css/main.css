@@ -148,7 +148,7 @@ hr {
   margin: 1.5em 0;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 960px) {
   .titel {
     margin: 2em 0;
     font-size: 3em;
