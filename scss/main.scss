@@ -146,11 +146,12 @@ hr {
 
 .titel {
     color: $li_grey;
+    font-size: 1.9em;
     font-weight: 700;
     line-height: 1.35em;
     margin: 1.5em 0;
 
-    @media(min-width: 700px) {
+    @media(min-width: 960px) {
         margin: 2em 0;
         font-size: 3em;
     }
@@ -393,7 +394,7 @@ section {
 .flip {
     height: 270px;
     margin: 25px auto;
-    perspective: 800;
+    perspective: 800px;
     position: relative;
     width: 100%;
     
@@ -449,28 +450,28 @@ section {
 .flip .card .work_4,
 .flip .card .work_5,
 .flip .card .work_6 {
-    background-size: cover; 
+    background-size: cover;
     background-position: center center;
 }
 
 .flip .card .work_1 {
-    background-image: url("../images/ufo.jpg");
+    background-image: url("../images/project3_4s.png");
 }
 
 .flip .card .work_2 {
-    background-image: url("../images/identification_screen_a.png");
+    background-image: url("../images/dev_1.png");
 }
 
 .flip .card .work_3 {
-    background-image: url("../images/05-03-2016.png");
+    background: url("../images/project2_2.png") center top;
 }
 
 .flip .card .work_4 {
-    background-image: url("../images/the_red_woman_.gif");
+    background-image: url("../images/dev2_3.png");
 }
 
 .flip .card .work_5 {
-    background-image: url("../images/dribbbowwww.png");
+    background-image: url("../images/vg_1.png");
 }
 
 .flip .card .work_6 {
@@ -482,10 +483,7 @@ section {
 -------------------------------------------------------------------*/
 #footer_section {
     background-color: $da_grey;
-    margin-top: -25px;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 0;
+    margin: -25px 25px 0;
     padding: 50px 0 75px;;
     
     @media(min-width: 700px){
@@ -513,16 +511,35 @@ section {
 .header_work_3,
 .header_work_4,
 .header_work_5,
-.header_work_6, {
-    background-position: center center;
-    background-repeat: no-repeat;
+.header_work_6 {
+    background: no-repeat center center;
     background-size: contain; 
     height: 50vh;
 }
 
 .header_work_1 {
-    background-color: #181743 !important;
-    background-image: url("../images/ufo.jpg")
+    background-color: $da_grey !important;
+    background-image: url("../images/project3_cover.png")
+}
+
+.header_work_2 {
+    background-color: $da_grey !important;
+    background-image: url("../images/dev_cover.png")
+}
+
+.header_work_3 {
+    background-color: $da_grey !important;
+    background-image: url("../images/project2_cover.png")
+}
+
+.header_work_4 {
+    background-color: $da_grey !important;
+    background-image: url("../images/dev2_cover.png")
+}
+
+.header_work_5 {
+    background-color: $da_grey !important;
+    background-image: url("../images/vg_cover.png")
 }
 
 .work_gallery {
